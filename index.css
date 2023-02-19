@@ -6,17 +6,19 @@ body{
   background-color:hsl(237, 49%, 15%);
   font-family: sans-serif;
 }
-
+.rules{
+  display: none;
+}
 .rules-main-containers{
-background-color:#fff;
-padding:20px;
-border-radius: 5px;
-width:300px;
-position: absolute;
-transform: translate(-50%,-50%);
-top: 50%;
-left:50%;
-display: none;
+  background-color:#fff;
+  padding:20px;
+  border-radius: 5px;
+  width:300px;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left:50%;
+  z-index: 2;
 }
 .rules-upper{
   display: flex;
@@ -46,7 +48,7 @@ display: none;
 .left-content{
   color:#fff;
   font-weight: bold;
-  font-size:1rem;
+  font-size:0.9rem;
 }
 .right-content{
   background-color: #fff;
@@ -65,14 +67,13 @@ display: none;
   color: #777;
 }
 .main-container-lower{
-  margin-top: 50px;
+  position: relative;
+  margin-top:80px;
 }
-.cls{
-  position: absolute;
-  width: 30%;
-}
+
 .triangle{
   margin-top:20px;
+  position: relative;
 }
 .triangle-svg{
   width:200px;
@@ -91,9 +92,9 @@ display: none;
   border-radius: 50%;
   width:80px;
   height: 80px;
-  position:relative;
-  top:-230px;
+  position:absolute;
   left:-30px;
+  top:0px;
 }
 
 .scissors{
@@ -102,9 +103,9 @@ display: none;
   border-radius: 50%;
   width:80px;
   height: 80px;
-  position: relative;
-  top:-340px;
+  position:absolute;
   left:130px;
+  top:0px;
 }
 .rock{
   background-color: #fff;
@@ -113,7 +114,62 @@ display: none;
   width:80px;
   height: 80px;
   align-self: center;
-  position: relative;
-  top:-320px;
+  position:absolute;
+  top:120px;
   left:50px;
+}
+.btn{
+  position: absolute;
+  top:95vh;
+  right:2%;
+}
+.btn button{
+  background-color: transparent;
+  color:#fff;
+  font-size:0.6rem;
+  padding:10px 20px;;
+  border: 2px solid #fff;
+  border-radius:5px;
+}
+
+.picked{
+  width: 50vw;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 30px auto 0 auto;
+}
+.picked-heading{
+  font-size:0.7rem;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}
+.house-selected,.user-selected{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  margin-top: 30px;
+  position: relative;
+  border:15px solid rgba(0,0,0,0);
+}
+.house-selected{
+  background-color:rgba(0,0,0,0.1);
+  }
+.user-selected{
+  background-color:#fff;
+}
+.user-selected-result,.house-selected-result{
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left:50%;
+}
+@media only screen and (max-width:500px){
+  .main-container-upper,.picked{
+    width:90vw;
+  }
+  .main-container-lower{
+    margin-top: 20px;
+  }
 }
